@@ -444,7 +444,7 @@ export default function HomePage() {
               </a>
               <span>Polygon Amoy Testnet</span>
             </div>
-            <p className="text-gray-600 text-sm">&copy; 2024 Gaming Arena. All rights reserved.</p>
+            <p className="text-gray-600 text-sm">&copy; 2025 Gaming Arena. All rights reserved.</p>
           </div>
         </div>
       </footer>
