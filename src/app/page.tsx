@@ -290,22 +290,24 @@ export default function HomePage() {
             <p className="text-gray-500 text-center mb-12">Choose your game and start earning rewards</p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
               {[
-                { icon: Crown, name: "Chess", desc: "Beat the AI", color: "from-amber-500 to-orange-600", reward: "10 GAT" },
-                { icon: Gamepad2, name: "Tetris", desc: "Stack & clear", color: "from-purple-500 to-pink-600", reward: "5 GAT" },
-                { icon: Zap, name: "Snake", desc: "Eat & grow", color: "from-green-500 to-emerald-600", reward: "3 GAT" },
-                { icon: Star, name: "Memory", desc: "Match pairs", color: "from-orange-500 to-red-600", reward: "2 GAT" },
-                { icon: Grid3X3, name: "2048", desc: "Merge tiles", color: "from-cyan-500 to-blue-600", reward: "20 GAT" },
-                { icon: X, name: "Tic Tac Toe", desc: "Beat AI", color: "from-purple-500 to-violet-600", reward: "8 GAT" },
-                { icon: Hand, name: "Rock Paper Scissors", desc: "Win rounds", color: "from-orange-500 to-red-600", reward: "5 GAT" },
-                { icon: Keyboard, name: "Wordle", desc: "Guess words", color: "from-blue-500 to-cyan-600", reward: "15 GAT" },
-                { icon: Bird, name: "Flappy Bird", desc: "Fly & score", color: "from-cyan-500 to-blue-600", reward: "4 GAT" },
-                { icon: Bomb, name: "Minesweeper", desc: "Clear mines", color: "from-red-500 to-orange-600", reward: "12 GAT" },
-                { icon: Hash, name: "Sudoku", desc: "Solve puzzle", color: "from-indigo-500 to-purple-600", reward: "18 GAT" },
+                { icon: Crown, name: "Chess", desc: "Beat the AI", color: "from-amber-500 to-orange-600", reward: "10 GAT", href: "/games/chess" },
+                { icon: Gamepad2, name: "Tetris", desc: "Stack & clear", color: "from-purple-500 to-pink-600", reward: "5 GAT", href: "/games/tetris" },
+                { icon: Zap, name: "Snake", desc: "Eat & grow", color: "from-green-500 to-emerald-600", reward: "3 GAT", href: "/games/snake" },
+                { icon: Star, name: "Memory", desc: "Match pairs", color: "from-orange-500 to-red-600", reward: "2 GAT", href: "/games/memory" },
+                { icon: Grid3X3, name: "2048", desc: "Merge tiles", color: "from-cyan-500 to-blue-600", reward: "20 GAT", href: "/games/2048" },
+                { icon: X, name: "Tic Tac Toe", desc: "Beat AI", color: "from-purple-500 to-violet-600", reward: "8 GAT", href: "/games/tictactoe" },
+                { icon: Hand, name: "Rock Paper Scissors", desc: "Win rounds", color: "from-orange-500 to-red-600", reward: "5 GAT", href: "/games/rockpaperscissors" },
+                { icon: Keyboard, name: "Wordle", desc: "Guess words", color: "from-blue-500 to-cyan-600", reward: "15 GAT", href: "/games/wordle" },
+                { icon: Bird, name: "Flappy Bird", desc: "Fly & score", color: "from-cyan-500 to-blue-600", reward: "4 GAT", href: "/games/flappybird" },
+                { icon: Bomb, name: "Minesweeper", desc: "Clear mines", color: "from-red-500 to-orange-600", reward: "12 GAT", href: "/games/minesweeper" },
+                { icon: Hash, name: "Sudoku", desc: "Solve puzzle", color: "from-indigo-500 to-purple-600", reward: "18 GAT", href: "/games/sudoku" },
               ].map((game, i) => (
-                <div
+                <Link
                   key={game.name}
-                  className="group relative bg-black/40 backdrop-blur-sm rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer"
+                  href={game.href}
+                  className="group relative bg-black/40 backdrop-blur-sm rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer block"
                   style={{ animationDelay: `${i * 0.1}s` }}
+                  aria-label={`Play ${game.name} - ${game.desc}`}
                 >
                   <div className={`w-14 h-14 mx-auto rounded-xl bg-gradient-to-br ${game.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
                     <game.icon className="w-7 h-7 text-white" />
@@ -315,7 +317,7 @@ export default function HomePage() {
                   <div className="text-xs text-purple-400 text-center px-2 py-1 rounded-full bg-purple-500/10">
                     {game.reward}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
