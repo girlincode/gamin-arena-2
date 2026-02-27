@@ -3,6 +3,7 @@ const solc = require("solc");
 const fs = require("fs");
 const path = require("path");
 
+
 const PRIVATE_KEY = "3f8061a5857a392ac24993936b0109b0c2b1952ed1428d50aa0e9a23a167959e";
 const RPC_URL = "https://rpc-amoy.polygon.technology/";
 
